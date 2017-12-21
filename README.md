@@ -5,6 +5,9 @@ This is an integration for EPiServer can use [AceEditor](https://github.com/ajax
 
 ---------------------------------------------------------
 To use AceEditor in your project, first try to install it via EPiServer Nuget
+```
+PM> Install-Package EPiServer.Plugins.AceEditor
+```
 
 In your project, decorate your **string** property with UIHint attribute
 ```
