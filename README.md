@@ -1,3 +1,5 @@
+[![Platform](https://img.shields.io/badge/Episerver-%2010.0.+-orange.svg?style=flat)](http://world.episerver.com/cms/)
+
 # EPiServer AceEditor
 This is an integration for EPiServer can use [AceEditor](https://github.com/ajaxorg/ace)
 
