@@ -2,12 +2,7 @@
 *.nupkg
 nuget/package/lib
 nuget/package/content
-src/.vs/EPiServer.Plugins.AceEditor/v15/.suo
-src/.vs/EPiServer.Plugins.AceEditor/v15/Server/sqlite3/db.lock
-src/.vs/EPiServer.Plugins.AceEditor/v15/Server/sqlite3/storage.ide
-src/.vs/EPiServer.Plugins.AceEditor/v15/Server/sqlite3/storage.ide-shm
-src/.vs/EPiServer.Plugins.AceEditor/v15/Server/sqlite3/storage.ide-wal
-src/EPiServer.Plugins.AceEditor/bin
-src/EPiServer.Plugins.AceEditor/obj
+src/.vs
+src/AceEditor/bin
+src/AceEditor/obj
 src/packages
-

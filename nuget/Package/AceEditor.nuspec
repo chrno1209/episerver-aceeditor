@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>EPiServer.Plugins.AceEditor</id>
+    <id>AceEditor</id>
     <version>1.0.0</version>
-    <title>EPiServer.Plugins.AceEditor</title>
+    <title>AceEditor</title>
     <authors>Hieu Nguyen Trung</authors>
     <owners>Hieu Nguyen Trung</owners>
     <licenseUrl>https://github.com/chrno1209/episerver-aceeditor/blob/master/LICENSE</licenseUrl>
