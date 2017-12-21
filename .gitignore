@@ -1,12 +1,13 @@
 
 *.nupkg
-nuget/package
-src/.vs/EPiServer.Plugins.Editors.AceEditor/v15/.suo
-src/.vs/EPiServer.Plugins.Editors.AceEditor/v15/Server/sqlite3/db.lock
-src/.vs/EPiServer.Plugins.Editors.AceEditor/v15/Server/sqlite3/storage.ide
-src/.vs/EPiServer.Plugins.Editors.AceEditor/v15/Server/sqlite3/storage.ide-shm
-src/.vs/EPiServer.Plugins.Editors.AceEditor/v15/Server/sqlite3/storage.ide-wal
-src/EPiServer.Plugins.Editors.AceEditor/bin
-src/EPiServer.Plugins.Editors.AceEditor/obj
+nuget/package/lib
+nuget/package/content
+src/.vs/EPiServer.Plugins.AceEditor/v15/.suo
+src/.vs/EPiServer.Plugins.AceEditor/v15/Server/sqlite3/db.lock
+src/.vs/EPiServer.Plugins.AceEditor/v15/Server/sqlite3/storage.ide
+src/.vs/EPiServer.Plugins.AceEditor/v15/Server/sqlite3/storage.ide-shm
+src/.vs/EPiServer.Plugins.AceEditor/v15/Server/sqlite3/storage.ide-wal
+src/EPiServer.Plugins.AceEditor/bin
+src/EPiServer.Plugins.AceEditor/obj
 src/packages
 

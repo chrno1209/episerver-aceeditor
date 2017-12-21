@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6CE42216-28D8-4BB5-9029-396B536B208D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EPiServer.Plugins.AceEditor</RootNamespace>
+    <AssemblyName>EPiServer.Plugins.AceEditor</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EPiServer, Version=10.0.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPiServer.CMS.Core.10.0.1\lib\net45\EPiServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.ApplicationModules, Version=10.0.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPiServer.Framework.10.0.1\lib\net45\EPiServer.ApplicationModules.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.Cms.Shell.UI, Version=10.0.2.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPiServer.CMS.UI.Core.10.0.2\lib\net45\EPiServer.Cms.Shell.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.Configuration, Version=10.0.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPiServer.CMS.Core.10.0.1\lib\net45\EPiServer.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.Data, Version=10.0.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPiServer.Framework.10.0.1\lib\net45\EPiServer.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.Data.Cache, Version=10.0.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPiServer.Framework.10.0.1\lib\net45\EPiServer.Data.Cache.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.Enterprise, Version=10.0.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPiServer.CMS.Core.10.0.1\lib\net45\EPiServer.Enterprise.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.Events, Version=10.0.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPiServer.Framework.10.0.1\lib\net45\EPiServer.Events.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.Framework, Version=10.0.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPiServer.Framework.10.0.1\lib\net45\EPiServer.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.ImageLibrary, Version=10.0.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPiServer.CMS.Core.10.0.1\lib\net45\EPiServer.ImageLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.Licensing, Version=10.0.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPiServer.Framework.10.0.1\lib\net45\EPiServer.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.LinkAnalyzer, Version=10.0.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPiServer.CMS.Core.10.0.1\lib\net45\EPiServer.LinkAnalyzer.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.Shell, Version=10.0.2.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPiServer.CMS.UI.Core.10.0.2\lib\net45\EPiServer.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.Shell.UI, Version=10.0.2.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPiServer.CMS.UI.Core.10.0.2\lib\net45\EPiServer.Shell.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.UI, Version=10.0.2.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPiServer.CMS.UI.Core.10.0.2\lib\net45\EPiServer.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.Web.WebControls, Version=10.0.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPiServer.CMS.Core.10.0.1\lib\net45\EPiServer.Web.WebControls.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.XForms, Version=10.0.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPiServer.CMS.Core.10.0.1\lib\net45\EPiServer.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap, Version=3.1.9.463, Culture=neutral, PublicKeyToken=e60ad81abae3c223, processorArchitecture=MSIL">
+      <HintPath>..\packages\structuremap-signed.3.1.9.463\lib\net40\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap.Net4, Version=3.1.9.463, Culture=neutral, PublicKeyToken=e60ad81abae3c223, processorArchitecture=MSIL">
+      <HintPath>..\packages\structuremap-signed.3.1.9.463\lib\net40\StructureMap.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Threading.Tasks.Dataflow, Version=4.5.24.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Tpl.Dataflow.4.5.24\lib\portable-net45+win8+wpa81\System.Threading.Tasks.Dataflow.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Editors\CsharpEditorDescriptor.cs" />
+    <Compile Include="Editors\CssEditorDescriptor.cs" />
+    <Compile Include="Editors\HandlebarsEditorDescriptor.cs" />
+    <Compile Include="Editors\HtmlEditorDescriptor.cs" />
+    <Compile Include="Editors\HtmlElixirEditorDescriptor.cs" />
+    <Compile Include="Editors\HtmlRubyEditorDescriptor.cs" />
+    <Compile Include="Editors\JavaEditorDescriptor.cs" />
+    <Compile Include="Editors\JavascriptEditorDescriptor.cs" />
+    <Compile Include="Editors\JsonEditorDescriptor.cs" />
+    <Compile Include="Editors\JspEditorDescriptor.cs" />
+    <Compile Include="Editors\LessEditorDescriptor.cs" />
+    <Compile Include="Editors\LuaEditorDescriptor.cs" />
+    <Compile Include="Editors\LuceneEditorDescriptor.cs" />
+    <Compile Include="Editors\MarkdownEditorDescriptor.cs" />
+    <Compile Include="Editors\MysqlEditorDescriptor.cs" />
+    <Compile Include="Editors\ObjectiveCEditorDescriptor.cs" />
+    <Compile Include="Editors\PascalEditorDescriptor.cs" />
+    <Compile Include="Editors\PerlEditorDescriptor.cs" />
+    <Compile Include="Editors\PgsqlEditorDescriptor.cs" />
+    <Compile Include="Editors\PhpEditorDescriptor.cs" />
+    <Compile Include="Editors\PowershellEditorDescriptor.cs" />
+    <Compile Include="Editors\PythonEditorDescriptor.cs" />
+    <Compile Include="Editors\RhtmlEditorDescriptor.cs" />
+    <Compile Include="Editors\RubyEditorDescriptor .cs" />
+    <Compile Include="Editors\SassEditorDescriptor.cs" />
+    <Compile Include="Editors\SchemeEditorDescriptor.cs" />
+    <Compile Include="Editors\ScssEditorDescriptor.cs" />
+    <Compile Include="Editors\SqlEditorDescriptor.cs" />
+    <Compile Include="Editors\SqlserverEditorDescriptor.cs" />
+    <Compile Include="Editors\SvgEditorDescriptor.cs" />
+    <Compile Include="Editors\SwiftEditorDescriptor.cs" />
+    <Compile Include="Editors\TextEditorDescriptor.cs" />
+    <Compile Include="Editors\TypescriptEditorDescriptor.cs" />
+    <Compile Include="Editors\VbscriptEditorDescriptor.cs" />
+    <Compile Include="Editors\XmlEditorDescriptor.cs" />
+    <Compile Include="Editors\XqueryEditorDescriptor.cs" />
+    <Compile Include="Editors\YamlEditorDescriptor.cs" />
+    <Compile Include="Editors\DjangoEditorDescriptor.cs" />
+    <Compile Include="Editors\CoffeeEditorDescriptor.cs" />
+    <Compile Include="Editors\CCppEditorDescriptor.cs" />
+    <Compile Include="Editors\RazorEditorDescriptor.cs" />
+    <Compile Include="Editors\AceEditorDescriptor.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UIHints.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="module.config" />
+    <None Include="modules\_protected\CMS\CMS.zip" />
+    <None Include="modules\_protected\Shell\Shell.zip" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ClientResources\Scripts\AceEditor\aceEditor.html" />
+    <Content Include="ClientResources\Scripts\AceEditor\aceEditor.js" />
+    <Content Include="ClientResources\Scripts\AceEditor\lib\ace\ace.js" />
+    <Content Include="ClientResources\Scripts\AceEditor\lib\ace\ace_src.js" />
+    <Content Include="ClientResources\Scripts\AceEditor\lib\ace\ext-beautify.js" />
+    <Content Include="ClientResources\Scripts\AceEditor\lib\ace\ext-chromevox.js" />
+    <Content Include="ClientResources\Scripts\AceEditor\lib\ace\ext-elastic_tabstops_lite.js" />
+    <Content Include="ClientResources\Scripts\AceEditor\lib\ace\ext-emmet.js" />
+    <Content Include="ClientResources\Scripts\AceEditor\lib\ace\ext-error_marker.js" />
+    <Content Include="ClientResources\Scripts\AceEditor\lib\ace\ext-keybinding_menu.js" />
+    <Content Include="ClientResources\Scripts\AceEditor\lib\ace\ext-language_tools.js" />
+    <Content Include="ClientResources\Scripts\AceEditor\lib\ace\ext-linking.js" />
+    <Content Include="ClientResources\Scripts\AceEditor\lib\ace\ext-modelist.js" />
+    <Content Include="ClientResources\Scripts\AceEditor\lib\ace\ext-old_ie.js" />
+    <Content Include="ClientResources\Scripts\AceEditor\lib\ace\ext-searchbox.js" />
+    <Content Include="ClientResources\Scripts\AceEditor\lib\ace\ext-settings_menu.js" />
+    <Content Include="ClientResources\Scripts\AceEditor\lib\ace\ext-spellcheck.js" />
+    <Content Include="ClientResources\Scripts\AceEditor\lib\ace\ext-split.js" />
+    <Content Include="ClientResources\Scripts\AceEditor\lib\ace\ext-static_highlight.js" />
+    <Content Include="ClientResources\Scripts\AceEditor\lib\ace\ext-statusbar.js" />
+    <Content Include="ClientResources\Scripts\AceEditor\lib\ace\ext-textarea.js" />
+    <Content Include="ClientResources\Scripts\AceEditor\lib\ace\ext-themelist.js" />
+    <Content Include="ClientResources\Scripts\AceEditor\lib\ace\ext-whitespace.js" />
+    <Content Include="ClientResources\Scripts\AceEditor\lib\ace\keybinding-emacs.js" />
+    <Content Include="ClientResources\Scripts\AceEditor\lib\ace\keybinding-vim.js" />
+    <Content Include="ClientResources\Scripts\AceEditor\lib\ace\mode-csharp.js" />
+    <Content Include="ClientResources\Scripts\AceEditor\lib\ace\mode-html.js" />
+    <Content Include="ClientResources\Scripts\AceEditor\lib\ace\mode-html_elixir.js" />
+    <Content Include="ClientResources\Scripts\AceEditor\lib\ace\mode-javascript.js" />
+    <Content Include="ClientResources\Scripts\AceEditor\lib\ace\mode-json.js" />
+    <Content Include="ClientResources\Scripts\AceEditor\lib\ace\mode-razor.js" />
+    <Content Include="ClientResources\Scripts\AceEditor\lib\ace\razor_chrome.css" />
+    <Content Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\csharp.js" />
+    <Content Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\html.js" />
+    <Content Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\html_elixir.js" />
+    <Content Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\javascript.js" />
+    <Content Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\json.js" />
+    <Content Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\razor.js" />
+    <Content Include="ClientResources\Scripts\AceEditor\lib\ace\theme-chrome.js" />
+    <Content Include="ClientResources\Scripts\AceEditor\lib\ace\worker-coffee.js" />
+    <Content Include="ClientResources\Scripts\AceEditor\lib\ace\worker-css.js" />
+    <Content Include="ClientResources\Scripts\AceEditor\lib\ace\worker-html.js" />
+    <Content Include="ClientResources\Scripts\AceEditor\lib\ace\worker-javascript.js" />
+    <Content Include="ClientResources\Scripts\AceEditor\lib\ace\worker-json.js" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
