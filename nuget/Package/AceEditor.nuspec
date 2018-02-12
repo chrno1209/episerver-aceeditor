@@ -2,20 +2,20 @@
 <package >
   <metadata>
     <id>AceEditor</id>
-    <version>1.0.0</version>
+    <version>11.0.0</version>
     <title>AceEditor</title>
-    <authors>Hieu Nguyen Trung</authors>
-    <owners>Hieu Nguyen Trung</owners>
+    <authors>Hieu Nguyen Trung, David Knipe</authors>
+    <owners>Hieu Nguyen Trung, David Knipe</owners>
     <licenseUrl>https://github.com/chrno1209/episerver-aceeditor/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/chrno1209/episerver-aceeditor</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/ajaxorg/ace/master/doc/site/images/ace-logo.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Integrate AceEditor into EPiServer</description>
-    <releaseNotes>First release</releaseNotes>
-    <copyright>Copyright 2017</copyright>
+    <description>Integrate AceEditor into Episerver</description>
+    <releaseNotes>Episerver 11 compatibility</releaseNotes>
+    <copyright>Copyright 2018</copyright>
     <tags>episerver editors ace-editor</tags>
     <dependencies>
-      <dependency id="EPiServer.CMS.UI" version="[10.0, 11.0)" />
+      <dependency id="EPiServer.CMS.UI" version="[11.0, 12.0)" />
     </dependencies>
   </metadata>
 </package>
