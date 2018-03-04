@@ -1,11 +1,10 @@
 [![Platform](https://img.shields.io/badge/Episerver-%2010.0.+-orange.svg?style=flat)](http://world.episerver.com/cms/)
-[![Platform](https://img.shields.io/badge/Episerver-%2011.0.+-orange.svg?style=flat)](http://world.episerver.com/cms/)
 
-# Episerver AceEditor
-This is an integration for Episerver to use [Ace](https://github.com/ajaxorg/ace) editor, a well-known code editor for the web.
+# EPiServer AceEditor
+This is an integration for EPiServer to use [Ace](https://github.com/ajaxorg/ace) editor, a well-known code editor for the web.
 
 ---------------------------------------------------------
-To use AceEditor in your project, first try to install it via Episerver Nuget
+To use AceEditor in your project, first try to install it via EPiServer Nuget
 ```
 PM> Install-Package AceEditor
 ```
