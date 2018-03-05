@@ -58,4 +58,4 @@ The list of supported languages are:
 - Xquery
 - Yaml
 
-Please note that the original code is for EPiServer v10, for v11 you can find the code in Episerver v11 compatibility branch
+Please note that the original code is for EPiServer v10, for v11 you can find the code in **[Episerver v11 compatibility](https://github.com/chrno1209/episerver-aceeditor/tree/Episerver_v11_compatibility)** branch
