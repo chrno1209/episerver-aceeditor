@@ -57,3 +57,5 @@ The list of supported languages are:
 - Xml
 - Xquery
 - Yaml
+
+Please note that the original code is for EPiServer v10, for v11 you can find the code in Episerver v11 compatibility branch
