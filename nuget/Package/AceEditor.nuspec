@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>AceEditor</id>
-    <version>11.0.0</version>
+    <version>11.0.1</version>
     <title>AceEditor</title>
     <authors>Hieu Nguyen Trung, David Knipe</authors>
     <owners>Hieu Nguyen Trung, David Knipe</owners>
@@ -11,7 +11,7 @@
     <iconUrl>https://raw.githubusercontent.com/ajaxorg/ace/master/doc/site/images/ace-logo.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Integrate AceEditor into Episerver</description>
-    <releaseNotes>Episerver 11 compatibility</releaseNotes>
+    <releaseNotes>Add a setting to web.config to ensure the module is disovered automatically on initialisation</releaseNotes>
     <copyright>Copyright 2018</copyright>
     <tags>episerver editors ace-editor</tags>
     <dependencies>

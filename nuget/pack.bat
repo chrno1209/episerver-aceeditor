@@ -9,6 +9,7 @@ md Package\content\modules\_protected\AceEditor\ClientResources\Scripts\AceEdito
 @Echo Copying new files
 copy ..\src\AceEditor\bin\Debug\AceEditor.dll Package\lib\net45\
 copy ..\src\AceEditor\module.config Package\content\modules\_protected\AceEditor\
+copy ..\src\AceEditor\web.config.transform Package\content
 
 xcopy /s ..\src\AceEditor\ClientResources\Scripts\AceEditor Package\content\modules\_protected\AceEditor\ClientResources\Scripts\AceEditor
 
