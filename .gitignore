@@ -6,3 +6,5 @@ src/.vs
 src/AceEditor/bin
 src/AceEditor/obj
 src/packages
+/src/AceEditor/AceEditor.v10.csproj.user
+/src/AceEditor/AceEditor.v11.csproj.user

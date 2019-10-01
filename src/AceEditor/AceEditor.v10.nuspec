@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>AceEditor</id>
+    <title>AceEditor</title>
+    <authors>Hieu Nguyen Trung</authors>
+    <owners>Hieu Nguyen Trung</owners>
+    <version>$version$</version>
+    <licenseUrl>https://github.com/chrno1209/episerver-aceeditor/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/chrno1209/episerver-aceeditor</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/ajaxorg/ace/master/doc/site/images/ace-logo.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Integrate AceEditor into EPiServer</description>
+    <releaseNotes>Update AceEditor to latest 1.4.6, support XhtmlString for html editor</releaseNotes>
+    <tags>episerver editors ace-editor</tags>
+    <dependencies>
+      <dependency id="EPiServer.CMS.UI.Core" version="[10.4.0, 11.0)" />
+      <dependency id="EPiServer.Framework" version="[10.4.0, 11.0)" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\$configuration$\AceEditor.dll" target="lib\net45\" />
+    <file src="bin\$configuration$\AceEditor.zip" target="content\modules\_protected\AceEditor\" />
+    <file src="web.config.transform" target="content" />
+  </files>
+</package>
