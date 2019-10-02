@@ -14,6 +14,7 @@ In your project, decorate your **string** property with UIHint attribute
 ```
 [UIHint(AceEditor.UIHints.Javascript)]
 ```
+Also supports **XhtmlString** property type for Html language.
 
 AceEditor can support many languages, but as some of them is not quite popular, so I just pick the one which are suitable to use.
 The list of supported languages are:
