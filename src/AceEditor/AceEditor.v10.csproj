@@ -30,90 +30,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EPiServer, Version=10.4.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-      <HintPath>..\packages\EPiServer.CMS.Core.10.4.0\lib\net45\EPiServer.dll</HintPath>
-    </Reference>
-    <Reference Include="EPiServer.ApplicationModules, Version=10.4.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-      <HintPath>..\packages\EPiServer.Framework.10.4.0\lib\net45\EPiServer.ApplicationModules.dll</HintPath>
-    </Reference>
-    <Reference Include="EPiServer.Cms.Shell.UI, Version=10.4.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-      <HintPath>..\packages\EPiServer.CMS.UI.Core.10.4.0\lib\net45\EPiServer.Cms.Shell.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="EPiServer.Configuration, Version=10.4.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-      <HintPath>..\packages\EPiServer.CMS.Core.10.4.0\lib\net45\EPiServer.Configuration.dll</HintPath>
-    </Reference>
-    <Reference Include="EPiServer.Data, Version=10.4.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-      <HintPath>..\packages\EPiServer.Framework.10.4.0\lib\net45\EPiServer.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="EPiServer.Data.Cache, Version=10.4.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-      <HintPath>..\packages\EPiServer.Framework.10.4.0\lib\net45\EPiServer.Data.Cache.dll</HintPath>
-    </Reference>
-    <Reference Include="EPiServer.Enterprise, Version=10.4.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-      <HintPath>..\packages\EPiServer.CMS.Core.10.4.0\lib\net45\EPiServer.Enterprise.dll</HintPath>
-    </Reference>
-    <Reference Include="EPiServer.Events, Version=10.4.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-      <HintPath>..\packages\EPiServer.Framework.10.4.0\lib\net45\EPiServer.Events.dll</HintPath>
-    </Reference>
-    <Reference Include="EPiServer.Framework, Version=10.4.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-      <HintPath>..\packages\EPiServer.Framework.10.4.0\lib\net45\EPiServer.Framework.dll</HintPath>
-    </Reference>
-    <Reference Include="EPiServer.ImageLibrary, Version=10.4.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-      <HintPath>..\packages\EPiServer.CMS.Core.10.4.0\lib\net45\EPiServer.ImageLibrary.dll</HintPath>
-    </Reference>
-    <Reference Include="EPiServer.Licensing, Version=10.4.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-      <HintPath>..\packages\EPiServer.Framework.10.4.0\lib\net45\EPiServer.Licensing.dll</HintPath>
-    </Reference>
-    <Reference Include="EPiServer.LinkAnalyzer, Version=10.4.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-      <HintPath>..\packages\EPiServer.CMS.Core.10.4.0\lib\net45\EPiServer.LinkAnalyzer.dll</HintPath>
-    </Reference>
-    <Reference Include="EPiServer.Shell, Version=10.4.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-      <HintPath>..\packages\EPiServer.CMS.UI.Core.10.4.0\lib\net45\EPiServer.Shell.dll</HintPath>
-    </Reference>
-    <Reference Include="EPiServer.Shell.UI, Version=10.4.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-      <HintPath>..\packages\EPiServer.CMS.UI.Core.10.4.0\lib\net45\EPiServer.Shell.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="EPiServer.UI, Version=10.4.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-      <HintPath>..\packages\EPiServer.CMS.UI.Core.10.4.0\lib\net45\EPiServer.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="EPiServer.Web.WebControls, Version=10.4.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-      <HintPath>..\packages\EPiServer.CMS.Core.10.4.0\lib\net45\EPiServer.Web.WebControls.dll</HintPath>
-    </Reference>
-    <Reference Include="EPiServer.XForms, Version=10.4.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-      <HintPath>..\packages\EPiServer.CMS.Core.10.4.0\lib\net45\EPiServer.XForms.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="StructureMap, Version=3.1.9.463, Culture=neutral, PublicKeyToken=e60ad81abae3c223, processorArchitecture=MSIL">
-      <HintPath>..\packages\structuremap-signed.3.1.9.463\lib\net40\StructureMap.dll</HintPath>
-    </Reference>
-    <Reference Include="StructureMap.Net4, Version=3.1.9.463, Culture=neutral, PublicKeyToken=e60ad81abae3c223, processorArchitecture=MSIL">
-      <HintPath>..\packages\structuremap-signed.3.1.9.463\lib\net40\StructureMap.Net4.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Threading.Tasks.Dataflow, Version=4.5.24.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Tpl.Dataflow.4.5.24\lib\portable-net45+win8+wpa81\System.Threading.Tasks.Dataflow.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -174,7 +92,6 @@
     <None Include="module.config" />
     <None Include="modules\_protected\CMS\CMS.zip" />
     <None Include="modules\_protected\Shell\Shell.zip" />
-    <None Include="packages.AceEditor.v10.config" />
     <None Include="packageTools.targets" />
     <None Include="web.config.transform" />
   </ItemGroup>
@@ -586,6 +503,14 @@
     <None Include="ClientResources\Scripts\AceEditor\lib\ace\worker-php.js" />
     <None Include="ClientResources\Scripts\AceEditor\lib\ace\worker-xml.js" />
     <None Include="ClientResources\Scripts\AceEditor\lib\ace\worker-xquery.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="EPiServer.CMS.UI.Core">
+      <Version>[10.4.0, 11.0)</Version>
+    </PackageReference>
+    <PackageReference Include="EPiServer.Framework">
+      <Version>[10.4.0, 11.0)</Version>
+    </PackageReference>
   </ItemGroup>
   <PropertyGroup>
     <ProjectDir Condition="'$(ProjectDir)' == ''">$(MSBuildProjectDirectory)</ProjectDir>
