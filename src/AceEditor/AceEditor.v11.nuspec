@@ -19,8 +19,8 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="bin\$configuration$\AceEditor.dll" target="lib\net461\" />
-    <file src="bin\$configuration$\AceEditor.zip" target="content\modules\_protected\AceEditor\" />
+    <file src="bin\$configuration$\net461\AceEditor.dll" target="lib\net461\" />
+    <file src="bin\$configuration$\net461\AceEditor.zip" target="content\modules\_protected\AceEditor\" />
     <file src="web.config.transform" target="content" />
   </files>
 </package>
