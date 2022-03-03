@@ -1,5 +1,5 @@
-$outputDir = ".\package\"
+$outputDir = "..\..\package\"
 $build = "Release"
-$version = "11.1.0"
+$version = "11.1.1"
 
-nuget.exe pack ".\src\AceEditor\AceEditor.v11.csproj" -IncludeReferencedProjects -properties Configuration=$build -Version $version -OutputDirectory $outputDir
+msbuild -t:pack ".\src\AceEditor\AceEditor.v11.csproj" -p:Configuration=$build -p:PackageVersion=$version -p:PackageOutputPath=$outputDir
