@@ -1,6 +1,13 @@
-﻿using EPiServer.Shell.Modules;
+﻿using System.Linq;
+
+#if NET
+using EPiServer.Shell.Modules;
 using Microsoft.Extensions.DependencyInjection;
-using System.Linq;
+#else
+using EPiServer.Shell.Modules.Internal;
+using EPiServer.ServiceLocation;
+using IServiceCollection = EPiServer.ServiceLocation.IServiceConfigurationProvider;
+#endif
 
 namespace AceEditor
 {
