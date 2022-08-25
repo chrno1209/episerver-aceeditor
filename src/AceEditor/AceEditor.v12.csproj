@@ -522,8 +522,10 @@
     <Content Include="$(OutDir)\AceEditor.zip">
       <Pack>true</Pack>
       <PackagePath>contentFiles\any\any\modules\_protected\AceEditor</PackagePath>
+      <BuildAction>None</BuildAction>
+      <PackageCopyToOutput>true</PackageCopyToOutput>
     </Content>
-    <Content Include="$(SolutionDir)\AceEditor.targets" >
+    <Content Include="$(ProjectDir)\AceEditor.targets">
       <Pack>true</Pack>
       <PackagePath>build\net5.0\AceEditor.targets</PackagePath>
     </Content>
