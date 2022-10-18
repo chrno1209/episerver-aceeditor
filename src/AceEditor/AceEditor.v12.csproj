@@ -9,7 +9,7 @@
     <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Authors>Hieu Nguyen Trung, David Knipe</Authors>
-    <Version>12.1.1</Version>
+    <Version>12.1.2</Version>
     <Company>Hieu Nguyen Trung</Company>
     <Description>Integrate AceEditor into EPiServer</Description>
     <Copyright>Copyright © 2017</Copyright>
@@ -523,7 +523,7 @@
       <Pack>true</Pack>
       <PackagePath>contentFiles\any\any\modules\_protected\AceEditor</PackagePath>
     </Content>
-    <Content Include="$(SolutionDir)\AceEditor.targets" >
+    <Content Include="AceEditor.targets">
       <Pack>true</Pack>
       <PackagePath>build\net5.0\AceEditor.targets</PackagePath>
     </Content>
