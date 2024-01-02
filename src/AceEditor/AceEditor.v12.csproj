@@ -49,7 +49,7 @@
     </Content>
     <Content Include="AceEditor.targets">
       <Pack>true</Pack>
-      <PackagePath>build\net5.0\AceEditor.targets</PackagePath>
+      <PackagePath>build\net6.0\AceEditor.targets</PackagePath>
     </Content>
   </ItemGroup>
   <ItemGroup>
