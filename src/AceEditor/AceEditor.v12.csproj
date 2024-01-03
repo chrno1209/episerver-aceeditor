@@ -8,7 +8,7 @@
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Hieu Nguyen Trung, David Knipe, Matthew Jimenez</Authors>
-    <Version>12.2.1</Version>
+    <Version>12.2.2</Version>
     <Company>Hieu Nguyen Trung</Company>
     <Description>Integrate AceEditor into EPiServer</Description>
     <Copyright>Copyright © 2023</Copyright>

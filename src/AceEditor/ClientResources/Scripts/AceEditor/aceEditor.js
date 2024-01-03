@@ -17,7 +17,7 @@
     "epi/epi",
     "epi/shell/widget/_ValueRequiredMixin",
 
-    "/EPiServer/AceEditor/ClientResources/Scripts/AceEditor/lib/ace/ace.js",
+    "aceeditor/lib/ace/ace",
     // templates
     "dojo/text!./aceEditor.html",
     // theme
@@ -228,7 +228,7 @@
                         mode = this.aceEditorMode;
 
                     if (!_loadedThemes[theme]) {
-                        this.loadScript("/EPiServer/AceEditor/ClientResources/Scripts/AceEditor/lib/ace/theme-" + theme + ".js", null, lang.hitch(this, function () {
+                        this.loadScript(require.toUrl("aceeditor/lib/ace/theme-" + theme + ".js"), null, lang.hitch(this, function () {
                             _loadedThemes[theme] = true;
                             this.editor.setTheme('ace/theme/' + theme);
                         }));
@@ -237,7 +237,7 @@
                     }
 
                     if (!_loadedModes[mode]) {
-                        this.loadScript("/EPiServer/AceEditor/ClientResources/Scripts/AceEditor/lib/ace/mode-" + mode + ".js", null, lang.hitch(this, function () {
+                        this.loadScript(require.toUrl("aceeditor/lib/ace/mode-" + mode + ".js"), null, lang.hitch(this, function () {
                             _loadedModes[mode] = true;
                             this.editorSession.setMode("ace/mode/" + mode);
                         }));
