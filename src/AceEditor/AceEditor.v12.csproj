@@ -44,6 +44,8 @@
     <Content Include="$(OutputPath)\AceEditor.zip">
       <Pack>true</Pack>
       <PackagePath>content\modules\_protected\AceEditor;contentFiles\any\any\modules\_protected\AceEditor</PackagePath>
+      <BuildAction>None</BuildAction>
+      <PackageCopyToOutput>true</PackageCopyToOutput>
     </Content>
     <Content Include="AceEditor.targets">
       <Pack>true</Pack>
