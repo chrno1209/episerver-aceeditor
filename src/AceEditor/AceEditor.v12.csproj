@@ -1,533 +1,67 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFrameworks>net461;net6.0</TargetFrameworks>
     <OutputType>Library</OutputType>
     <RootNamespace>AceEditor</RootNamespace>
     <AssemblyName>AceEditor</AssemblyName>
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
-    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-    <Authors>Hieu Nguyen Trung, David Knipe</Authors>
-    <Version>12.1.1</Version>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Hieu Nguyen Trung, David Knipe, Matthew Jimenez</Authors>
+    <Version>12.2.1</Version>
     <Company>Hieu Nguyen Trung</Company>
     <Description>Integrate AceEditor into EPiServer</Description>
-    <Copyright>Copyright © 2017</Copyright>
-    <PackageLicenseUrl>https://github.com/chrno1209/episerver-aceeditor/blob/master/LICENSE</PackageLicenseUrl>
+    <Copyright>Copyright © 2023</Copyright>
     <PackageProjectUrl>https://github.com/chrno1209/episerver-aceeditor</PackageProjectUrl>
     <PackageIconUrl>https://raw.githubusercontent.com/ajaxorg/ace/master/doc/site/images/ace-logo.png</PackageIconUrl>
-    <PackageReleaseNotes>Update AceEditor to latest 1.4.6, support XhtmlString for html editor</PackageReleaseNotes>
+    <PackageReleaseNotes>Update to target .NET 6 and update minimal dependencies</PackageReleaseNotes>
     <PackageTags>episerver editors ace-editor</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
   </PropertyGroup>
-  <ItemGroup>
-    <None Remove="web.config.transform" />
+  <ItemGroup Condition="'$(TargetFramework)' == 'net461'">
+    <PackageReference Include="EPiServer.CMS.UI.Core" Version="[11.1.0, 12.0)" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Editors\CsharpEditorDescriptor.cs" />
-    <Compile Include="Editors\CssEditorDescriptor.cs" />
-    <Compile Include="Editors\HandlebarsEditorDescriptor.cs" />
-    <Compile Include="Editors\HtmlEditorDescriptor.cs" />
-    <Compile Include="Editors\HtmlElixirEditorDescriptor.cs" />
-    <Compile Include="Editors\HtmlRubyEditorDescriptor.cs" />
-    <Compile Include="Editors\JavaEditorDescriptor.cs" />
-    <Compile Include="Editors\JavascriptEditorDescriptor.cs" />
-    <Compile Include="Editors\JsonEditorDescriptor.cs" />
-    <Compile Include="Editors\JspEditorDescriptor.cs" />
-    <Compile Include="Editors\LessEditorDescriptor.cs" />
-    <Compile Include="Editors\LuaEditorDescriptor.cs" />
-    <Compile Include="Editors\LuceneEditorDescriptor.cs" />
-    <Compile Include="Editors\MarkdownEditorDescriptor.cs" />
-    <Compile Include="Editors\MysqlEditorDescriptor.cs" />
-    <Compile Include="Editors\ObjectiveCEditorDescriptor.cs" />
-    <Compile Include="Editors\PascalEditorDescriptor.cs" />
-    <Compile Include="Editors\PerlEditorDescriptor.cs" />
-    <Compile Include="Editors\PgsqlEditorDescriptor.cs" />
-    <Compile Include="Editors\PhpEditorDescriptor.cs" />
-    <Compile Include="Editors\PowershellEditorDescriptor.cs" />
-    <Compile Include="Editors\PythonEditorDescriptor.cs" />
-    <Compile Include="Editors\RhtmlEditorDescriptor.cs" />
-    <Compile Include="Editors\RubyEditorDescriptor .cs" />
-    <Compile Include="Editors\SassEditorDescriptor.cs" />
-    <Compile Include="Editors\SchemeEditorDescriptor.cs" />
-    <Compile Include="Editors\ScssEditorDescriptor.cs" />
-    <Compile Include="Editors\SqlEditorDescriptor.cs" />
-    <Compile Include="Editors\SqlserverEditorDescriptor.cs" />
-    <Compile Include="Editors\SvgEditorDescriptor.cs" />
-    <Compile Include="Editors\SwiftEditorDescriptor.cs" />
-    <Compile Include="Editors\TextEditorDescriptor.cs" />
-    <Compile Include="Editors\TypescriptEditorDescriptor.cs" />
-    <Compile Include="Editors\VbscriptEditorDescriptor.cs" />
-    <Compile Include="Editors\XmlEditorDescriptor.cs" />
-    <Compile Include="Editors\XqueryEditorDescriptor.cs" />
-    <Compile Include="Editors\YamlEditorDescriptor.cs" />
-    <Compile Include="Editors\DjangoEditorDescriptor.cs" />
-    <Compile Include="Editors\CoffeeEditorDescriptor.cs" />
-    <Compile Include="Editors\CCppEditorDescriptor.cs" />
-    <Compile Include="Editors\RazorEditorDescriptor.cs" />
-    <Compile Include="Editors\AceEditorDescriptor.cs" />
-    <Compile Include="ServiceCollectionExtensions.cs" />
-    <Compile Include="UIHints.cs" />
+  <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
+    <PackageReference Include="EPiServer.CMS.UI.Core" Version="[12.4.0, 13.0)" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="app.config" />
-    <None Include="module.config" />
-    <None Include="modules\_protected\CMS\CMS.zip" />
-    <None Include="modules\_protected\Shell\Shell.zip" />
-    <None Include="packageTools.targets" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ClientResources\Scripts\AceEditor\aceEditor.html" />
-    <None Include="ClientResources\Scripts\AceEditor\aceEditor.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\razor_chrome.css" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\ace.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\ext-beautify.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\ext-elastic_tabstops_lite.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\ext-emmet.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\ext-error_marker.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\ext-keybinding_menu.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\ext-language_tools.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\ext-linking.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\ext-modelist.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\ext-options.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\ext-prompt.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\ext-rtl.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\ext-searchbox.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\ext-settings_menu.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\ext-spellcheck.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\ext-split.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\ext-static_highlight.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\ext-statusbar.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\ext-textarea.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\ext-themelist.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\ext-whitespace.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\keybinding-emacs.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\keybinding-sublime.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\keybinding-vim.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-abap.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-abc.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-actionscript.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-ada.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-apache_conf.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-apex.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-applescript.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-aql.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-asciidoc.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-asl.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-assembly_x86.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-autohotkey.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-batchfile.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-bro.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-c9search.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-cirru.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-clojure.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-cobol.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-coffee.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-coldfusion.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-crystal.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-csharp.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-csound_document.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-csound_orchestra.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-csound_score.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-csp.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-css.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-curly.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-c_cpp.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-d.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-dart.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-diff.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-django.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-dockerfile.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-dot.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-drools.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-edifact.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-eiffel.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-ejs.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-elixir.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-elm.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-erlang.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-forth.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-fortran.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-fsharp.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-fsl.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-ftl.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-gcode.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-gherkin.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-gitignore.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-glsl.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-gobstones.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-golang.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-graphqlschema.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-groovy.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-haml.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-handlebars.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-haskell.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-haskell_cabal.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-haxe.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-hjson.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-html.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-html_elixir.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-html_ruby.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-ini.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-io.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-jack.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-jade.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-java.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-javascript.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-json.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-jsoniq.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-jsp.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-jssm.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-jsx.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-julia.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-kotlin.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-latex.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-less.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-liquid.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-lisp.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-livescript.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-logiql.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-logtalk.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-lsl.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-lua.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-luapage.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-lucene.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-makefile.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-markdown.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-mask.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-matlab.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-maze.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-mel.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-mixal.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-mushcode.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-mysql.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-nginx.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-nim.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-nix.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-nsis.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-objectivec.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-ocaml.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-pascal.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-perl.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-perl6.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-pgsql.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-php.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-php_laravel_blade.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-pig.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-plain_text.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-powershell.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-praat.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-prolog.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-properties.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-protobuf.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-puppet.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-python.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-r.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-razor.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-rdoc.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-red.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-redshift.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-rhtml.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-rst.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-ruby.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-rust.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-sass.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-scad.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-scala.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-scheme.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-scss.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-sh.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-sjs.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-slim.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-smarty.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-snippets.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-soy_template.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-space.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-sparql.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-sql.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-sqlserver.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-stylus.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-svg.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-swift.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-tcl.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-terraform.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-tex.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-text.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-textile.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-toml.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-tsx.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-turtle.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-twig.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-typescript.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-vala.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-vbscript.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-velocity.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-verilog.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-vhdl.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-visualforce.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-wollok.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-xml.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-xquery.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-yaml.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\mode-zeek.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\abap.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\abc.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\actionscript.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\ada.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\apache_conf.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\apex.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\applescript.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\aql.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\asciidoc.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\asl.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\assembly_x86.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\autohotkey.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\batchfile.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\bro.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\c9search.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\cirru.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\clojure.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\cobol.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\coffee.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\coldfusion.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\crystal.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\csharp.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\csound_document.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\csound_orchestra.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\csound_score.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\csp.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\css.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\curly.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\c_cpp.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\d.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\dart.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\diff.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\django.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\dockerfile.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\dot.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\drools.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\edifact.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\eiffel.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\ejs.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\elixir.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\elm.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\erlang.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\forth.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\fortran.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\fsharp.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\fsl.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\ftl.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\gcode.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\gherkin.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\gitignore.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\glsl.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\gobstones.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\golang.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\graphqlschema.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\groovy.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\haml.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\handlebars.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\haskell.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\haskell_cabal.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\haxe.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\hjson.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\html.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\html_elixir.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\html_ruby.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\ini.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\io.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\jack.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\jade.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\java.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\javascript.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\json.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\jsoniq.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\jsp.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\jssm.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\jsx.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\julia.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\kotlin.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\latex.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\less.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\liquid.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\lisp.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\livescript.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\logiql.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\logtalk.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\lsl.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\lua.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\luapage.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\lucene.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\makefile.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\markdown.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\mask.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\matlab.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\maze.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\mel.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\mixal.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\mushcode.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\mysql.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\nginx.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\nim.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\nix.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\nsis.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\objectivec.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\ocaml.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\pascal.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\perl.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\perl6.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\pgsql.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\php.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\php_laravel_blade.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\pig.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\plain_text.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\powershell.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\praat.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\prolog.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\properties.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\protobuf.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\puppet.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\python.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\r.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\razor.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\rdoc.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\red.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\redshift.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\rhtml.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\rst.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\ruby.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\rust.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\sass.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\scad.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\scala.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\scheme.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\scss.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\sh.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\sjs.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\slim.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\smarty.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\snippets.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\soy_template.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\space.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\sparql.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\sql.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\sqlserver.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\stylus.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\svg.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\swift.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\tcl.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\terraform.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\tex.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\text.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\textile.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\toml.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\tsx.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\turtle.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\twig.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\typescript.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\vala.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\vbscript.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\velocity.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\verilog.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\vhdl.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\visualforce.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\wollok.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\xml.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\xquery.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\yaml.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\snippets\zeek.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\theme-ambiance.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\theme-chaos.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\theme-chrome.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\theme-clouds.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\theme-clouds_midnight.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\theme-cobalt.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\theme-crimson_editor.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\theme-dawn.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\theme-dracula.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\theme-dreamweaver.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\theme-eclipse.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\theme-github.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\theme-gob.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\theme-gruvbox.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\theme-idle_fingers.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\theme-iplastic.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\theme-katzenmilch.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\theme-kr_theme.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\theme-kuroir.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\theme-merbivore.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\theme-merbivore_soft.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\theme-monokai.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\theme-mono_industrial.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\theme-pastel_on_dark.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\theme-solarized_dark.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\theme-solarized_light.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\theme-sqlserver.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\theme-terminal.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\theme-textmate.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\theme-tomorrow.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\theme-tomorrow_night.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\theme-tomorrow_night_blue.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\theme-tomorrow_night_bright.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\theme-tomorrow_night_eighties.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\theme-twilight.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\theme-vibrant_ink.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\theme-xcode.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\worker-coffee.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\worker-css.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\worker-html.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\worker-javascript.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\worker-json.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\worker-lua.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\worker-php.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\worker-xml.js" />
-    <None Include="ClientResources\Scripts\AceEditor\lib\ace\worker-xquery.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="EPiServer.CMS.UI.Core">
-      <Version>[12.1.0, 13.0)</Version>
-    </PackageReference>
-    <PackageReference Include="EPiServer.Framework">
-      <Version>[12.1.0, 13.0)</Version>
-    </PackageReference>
-  </ItemGroup>
-  <PropertyGroup>
-    <ProjectDir Condition="'$(ProjectDir)' == ''">$(MSBuildProjectDirectory)</ProjectDir>
-    <SolutionDir Condition="'$(SolutionDir)' == ''">$(ProjectDir)</SolutionDir>
-  </PropertyGroup>
-  <Import Project="$(ProjectDir)\packageTools.targets" />
-  <Target Name="CreateNugetPackage" AfterTargets="Build;Rebuild" Condition="'$(Configuration)' == 'Release' ">
-    <Message Text="Creating Nuget Package" />
-    <!-- Create the Versioned out dir for the client resources-->
-    <PropertyGroup>
-      <!-- NOTE! This is different between cms versions, the zip file needs to be named the same in the package -->
-      <OutDir>$(OutputPath)</OutDir>
-      <zipFile>$(OutDir)\AceEditor.zip</zipFile>
-    </PropertyGroup>
+  <Import Project="packageTools.targets" />
+  <Target Name="CreateModuleArchive" AfterTargets="Build;Rebuild" Condition="'$(Configuration)' == 'Release' ">
+    <Message Text="Creating Module Archive" />
     <!-- Copy -->
     <ItemGroup>
-      <ClientResources Include="$(ProjectDir)\ClientResources\**\*" />
+      <ClientResources Include="ClientResources\**\*" />
     </ItemGroup>
-    <Copy SourceFiles="$(ProjectDir)\module.config" DestinationFolder="$(TmpOutDir)\content" />
-    <Copy SourceFiles="@(ClientResources)" DestinationFiles="@(ClientResources -> '$(TmpOutDir)\content\ClientResources\%(RecursiveDir)%(Filename)%(Extension)')" />
-    <!-- Delete old Zip file -->
-    <Delete Files="$(zipFile)" />
-    <!-- Create the Zip file -->
-    <ZipDirectory InputPath="$(TmpOutDir)\content" OutputFileName="$(zipFile)" OverwriteExistingFile="true" />
-    <!-- Cleanup -->
-    <RemoveDir Directories="$(TmpOutDir)" />
+    <Copy SourceFiles="module.config" DestinationFolder="$(OutputPath)\content" />
+    <Copy SourceFiles="@(ClientResources)" DestinationFiles="@(ClientResources -> '$(OutputPath)\content\ClientResources\%(RecursiveDir)%(Filename)%(Extension)')" />
+    <ZipDirectory InputPath="$(OutputPath)\content" OutputFileName="$(OutputPath)\AceEditor.zip" OverwriteExistingFile="true" />
   </Target>
   <ItemGroup>
-    <Content Include="$(OutDir)\AceEditor.zip">
+    <Content Include="web.config.transform">
       <Pack>true</Pack>
-      <PackagePath>contentFiles\any\any\modules\_protected\AceEditor</PackagePath>
+      <PackagePath>content</PackagePath>
+    </Content>
+    <Content Include="$(OutputPath)\AceEditor.zip">
+      <Pack>true</Pack>
+      <PackagePath>content\modules\_protected\AceEditor;contentFiles\any\any\modules\_protected\AceEditor</PackagePath>
       <BuildAction>None</BuildAction>
       <PackageCopyToOutput>true</PackageCopyToOutput>
     </Content>
-    <Content Include="$(ProjectDir)\AceEditor.targets">
+    <Content Include="AceEditor.targets">
       <Pack>true</Pack>
-      <PackagePath>build\net5.0\AceEditor.targets</PackagePath>
+      <PackagePath>build\net6.0\AceEditor.targets</PackagePath>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 </Project>

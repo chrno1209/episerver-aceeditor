@@ -199,14 +199,14 @@
                     var ed = this.getEditor(),
                         editableValue = newValue || "";
 
-                    this._set("value", newValue);
+                    this._set("value", editableValue);
 
                     // If the editor has started, set the content to it
                     // otherwise it will be set from the textarea when tiny inits
                     if (ed) {
                         this.editorSession.setValue(editableValue);
                     } else {
-                        $(this.editorFrame).text(editableValue);
+                        this.editorFrame.textContent = editableValue;
                     }
 
                     this.inherited(arguments);
